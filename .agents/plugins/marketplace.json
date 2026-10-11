@@ -1,0 +1,20 @@
+{
+  "name": "uiprobe",
+  "interface": {
+    "displayName": "Uiprobe"
+  },
+  "plugins": [
+    {
+      "name": "uiprobe",
+      "source": {
+        "source": "local",
+        "path": "./openai/uiprobe"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

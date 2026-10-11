@@ -1,0 +1,27 @@
+name: Close pull requests
+
+# This repository is a published copy; each release replaces its contents.
+# pull_request_target runs in this repo's context and never checks out the
+# pull request's code, so it's safe for PRs from forks.
+on:
+  pull_request_target:
+    types: [opened, reopened]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  close:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - run: gh pr close "$PR" --repo "$REPO" --comment "$COMMENT"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+          COMMENT: >-
+            Thanks for the pull request. This repository is a published copy of
+            the Uiprobe plugin and doesn't accept contributions. To report a
+            problem or suggest a change, contact support:
+            https://www.uiprobe.io/help/support

@@ -1,0 +1,52 @@
+{
+  "name": "uiprobe",
+  "version": "0.1.0",
+  "description": "Automatically detect spacing, typography, color, and layout differences between your Figma design and live website.",
+  "author": {
+    "name": "Uiprobe",
+    "url": "https://www.uiprobe.io"
+  },
+  "homepage": "https://www.uiprobe.io",
+  "repository": "https://github.com/uiprobe/chatgpt-codex-plugin",
+  "license": "MIT",
+  "keywords": [
+    "figma",
+    "design",
+    "visual-qa",
+    "frontend",
+    "mcp"
+  ],
+  "interface": {
+    "displayName": "Uiprobe",
+    "shortDescription": "Compare your site with Figma",
+    "longDescription": "Uiprobe automatically catches visual differences between your Figma designs and live web pages: layout and spacing, typography, color, size, and content. Every finding shows the expected value and the actual value.\n\nGive ChatGPT a Figma frame URL and a page URL, and it runs the comparison and goes through the findings with you. In Codex, it can find the element in your code, fix it and run the probe again to see what's still off.\n\nSign in with Figma at app.uiprobe.io first. The page has to be reachable from the internet.",
+    "developerName": "Uiprobe",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://www.uiprobe.io",
+    "supportURL": "https://www.uiprobe.io/help/support",
+    "privacyPolicyURL": "https://www.uiprobe.io/legal/privacy",
+    "termsOfServiceURL": "https://www.uiprobe.io/legal/terms",
+    "defaultPrompt": [
+      "Compare my Figma frame with my live page.",
+      "Which findings are in my latest probe?",
+      "Rerun my last probe."
+    ],
+    "brandColor": "#007AFF",
+    "brandColorDark": "#007AFF",
+    "composerIcon": "./assets/uiprobe-icon.svg",
+    "logo": "./assets/uiprobe-icon.svg"
+  },
+  "mcpServers": "./.mcp.json",
+  "extensions": {
+    "com.openai": {
+      "publication": {
+        "release_notes": "First submission. Six tools to run, rerun, list and read probes and to view finding images."
+      }
+    }
+  }
+}
