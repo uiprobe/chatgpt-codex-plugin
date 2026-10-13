@@ -45,7 +45,7 @@
   "extensions": {
     "com.openai": {
       "publication": {
-        "release_notes": "First submission. Six tools to run, rerun, list and read probes and to view finding images."
+        "release_notes": "First submission. Eight tools to run, rerun, list and read probes, to view finding images, and to dismiss and restore findings."
       }
     }
   }

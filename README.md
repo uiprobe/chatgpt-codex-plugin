@@ -20,6 +20,7 @@ The plugin adds one thing: the Uiprobe MCP server at `https://app.uiprobe.io/mcp
 - **Rerun a probe** after changing the page to see what's left.
 - **List your probes** and read their findings.
 - **Look at a finding** as crops of the design and the page.
+- **Dismiss findings** you say are intentional, after asking you, so nobody on the probe sees them again, and restore them whenever you want.
 
 The plugin contains no code that runs on your machine.
 
