@@ -1,0 +1,3 @@
+interface:
+  display_name: "Fix design differences"
+  short_description: "Bring a page in line with its Figma design"

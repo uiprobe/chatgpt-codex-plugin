@@ -1,0 +1,3 @@
+interface:
+  display_name: "Triage findings"
+  short_description: "Decide what to fix and what's intentional"

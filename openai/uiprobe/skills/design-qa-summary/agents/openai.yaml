@@ -1,0 +1,3 @@
+interface:
+  display_name: "Design QA summary"
+  short_description: "Summarise a probe's findings to share"

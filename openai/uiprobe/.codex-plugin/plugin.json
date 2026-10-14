@@ -44,8 +44,59 @@
   "mcpServers": "./.mcp.json",
   "extensions": {
     "com.openai": {
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Create a probe that compares a Figma frame with a live page.",
+              "prompt": "Compare this Figma frame with this page: <sample frame URL> <sample page URL>",
+              "tools_triggered": "run_probe, or rerun_probe when a probe for this frame and page already exists, then get_probe_status, get_probe",
+              "expected_behavior": "A list of findings, each with a link to the finding in the Uiprobe viewer."
+            },
+            {
+              "description": "Dismiss a finding the user says is intentional, then restore it with the follow-up prompt \"Restore it.\"",
+              "prompt": "Dismiss that finding, the design is intentional there.",
+              "tools_triggered": "get_probe, dismiss_findings, then get_probe, restore_findings",
+              "expected_behavior": "ChatGPT says which finding it will dismiss and asks before it does. The finding is then gone from the next get_probe and counted in dismissedCount. After \"Restore it.\", the finding is back."
+            },
+            {
+              "description": "Read the findings of the user's latest probe.",
+              "prompt": "What's different between my design and the page in my latest probe?",
+              "tools_triggered": "list_probes, get_probe",
+              "expected_behavior": "The findings, each with what the design specifies and what the page renders."
+            },
+            {
+              "description": "Look at one finding through crops of the design and the page.",
+              "prompt": "Show me the biggest spacing difference in that probe.",
+              "tools_triggered": "get_probe, get_finding_images",
+              "expected_behavior": "ChatGPT describes what the design and the page show for that finding, based on the crops, with a link to the finding in the viewer."
+            },
+            {
+              "description": "Run an existing probe again.",
+              "prompt": "Rerun that probe.",
+              "tools_triggered": "list_probes, rerun_probe",
+              "expected_behavior": "A new version of the same probe, not a new probe."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Unrelated coding: no design or page is involved, so there is nothing to compare.",
+              "prompt": "Write the CSS for a pricing card."
+            },
+            {
+              "description": "Out of scope: Uiprobe compares designs with pages; it doesn't create designs.",
+              "prompt": "Design a new landing page in Figma for me."
+            },
+            {
+              "description": "Deletion: no tool deletes probes, so the answer points to the Uiprobe web app.",
+              "prompt": "Delete all my probes."
+            }
+          ]
+        },
+        "commerce": false
+      },
       "publication": {
-        "release_notes": "First submission. Eight tools to run, rerun, list and read probes, to view finding images, and to dismiss and restore findings."
+        "release_notes": "First submission. Eight tools to run, rerun, list and read probes, view finding images, and dismiss and restore findings, plus skills to summarise a probe's findings, triage them, check a pull request's pages and fix design differences in code."
       }
     }
   }
