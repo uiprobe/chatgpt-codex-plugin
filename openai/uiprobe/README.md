@@ -33,7 +33,7 @@ The plugin contains no code that runs on your machine.
 
 ## What it sends
 
-- **To Uiprobe:** the Figma frame URL and webpage URL of each probe you run, and the ids of probes and findings you ask about. Uiprobe reads the Figma frame through Figma's API with your Figma sign-in, and captures the webpage from its own servers, so the page must be publicly reachable. For a page on localhost, Codex can open a temporary tunnel to it.
+- **To Uiprobe:** the Figma frame URL and webpage URL of each probe you run, and the ids of probes and findings you ask about. Uiprobe reads the Figma frame through Figma's API with your Figma sign-in, and captures the webpage from its own servers, so the page must be publicly reachable. For a page on localhost, Codex can open a temporary tunnel to it once you agree.
 - **Sign-in:** you sign in with Figma through Uiprobe's sign-in page. ChatGPT or Codex keeps the resulting token.
 
 Uiprobe's [privacy policy](https://www.uiprobe.io/legal/privacy) and [terms](https://www.uiprobe.io/legal/terms) apply.
