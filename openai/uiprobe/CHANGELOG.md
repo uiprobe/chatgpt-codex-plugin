@@ -9,4 +9,4 @@
 ### Submissions
 
 - 2026-10-14: submitted to OpenAI's plugin directory.
-- 2026-10-28: rejected: "One or more of your tool's annotations do not appear to match the tool's behavior." The server's hints on `dismiss_findings` and `restore_findings` were corrected (both open world, `dismiss_findings` destructive).
+- 2026-10-28: rejected: "One or more of your tool's annotations do not appear to match the tool's behavior." The server now marks `dismiss_findings` as destructive.
